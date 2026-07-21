@@ -1,0 +1,1 @@
+# 3. O resultado das execuções manuais (Passou / Falhou)
