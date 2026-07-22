@@ -40,8 +40,9 @@ Antes de executar os testes automatizados, certifique-se de ter instalado em sua
 
 1. **Clonar o repositório:**
    ```bash
- git clone https://github.com/Yezzirz/Saucedemo-QA-Suite.git
- cd Saucedemo-QA-Suite
+   git clone [https://github.com/Yezzirz/Saucedemo-QA-Suite.git](https://github.com/Yezzirz/Saucedemo-QA-Suite.git)
+   cd Saucedemo-QA-Suite
+   ```
 
 
 ### Instalar as dependências do projeto:
