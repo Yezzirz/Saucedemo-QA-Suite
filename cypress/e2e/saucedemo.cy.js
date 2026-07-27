@@ -52,4 +52,4 @@ describe('Fluxo de Compras - Saucedemo', () => {
       .and('have.text', 'Thank you for your order!')
   })
 
-}) // <-- O describe fecha só aqui no final de tudo!
+})
