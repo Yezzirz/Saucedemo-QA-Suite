@@ -31,6 +31,10 @@ Toda a gestão, especificação e relatórios de testes manuais foram padronizad
 
 Este repositório contém a automação dos fluxos principais da aplicação (E2E) cobrindo autenticação, navegação e fluxo de compras.
 
+### 🧪 Suíte de Testes E2E
+
+* **[Arquivo do Teste E2E (Cypress)](cypress/e2e/saucedemo.cy.js):** Cenários automatizados do fluxo de autenticação, catálogo e checkout.
+
 ### 🛠️ Pré-requisitos
 Antes de executar os testes automatizados, certifique-se de ter instalado em sua máquina:
 * [Node.js](https://nodejs.org/) (Versão 16 ou superior)
