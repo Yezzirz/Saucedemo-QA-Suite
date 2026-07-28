@@ -1,15 +1,21 @@
 describe('Fluxo de Compras - Saucedemo', () => {
 
-  // Executa o login antes de CADA teste individual
-  beforeEach(() => {
+  // Função auxiliar de login rápido para manter a independência de cada 'it'
+  const realizarLogin = () => {
     cy.visit('https://www.saucedemo.com/')
     cy.get('[data-test="username"]').type('standard_user')
     cy.get('[data-test="password"]').type('secret_sauce')
     cy.get('[data-test="login-button"]').click()
+  }
+
+  it('01 - Deve realizar o login com sucesso no sistema', () => {
+    realizarLogin()
     cy.url().should('include', '/inventory.html')
   })
 
-  it('Deve adicionar produtos ao carrinho e atualizar o contador de itens', () => {
+  it('02 - Deve adicionar produtos ao carrinho e atualizar o contador de itens', () => {
+    realizarLogin()
+
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
     cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
     cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
@@ -21,7 +27,9 @@ describe('Fluxo de Compras - Saucedemo', () => {
     cy.get('[data-test="shopping-cart-badge"]').should('have.text', '6')
   })
 
-  it('Deve navegar para o carrinho e retornar para a lista de produtos', () => {
+  it('03 - Deve navegar para o carrinho e retornar para a lista de produtos', () => {
+    realizarLogin()
+
     cy.get('[data-test="shopping-cart-link"]').click()
     cy.url().should('include', '/cart.html')
 
@@ -29,7 +37,9 @@ describe('Fluxo de Compras - Saucedemo', () => {
     cy.url().should('include', '/inventory.html')
   })
 
-  it('Deve realizar o checkout com sucesso', () => {
+  it('04 - Deve realizar o checkout com sucesso', () => {
+    realizarLogin()
+
     // Adiciona ao menos um item para liberar o fluxo de checkout
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
     
