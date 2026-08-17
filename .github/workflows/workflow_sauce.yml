@@ -1,0 +1,43 @@
+name: Cypress E2E Tests - Sauce Demo
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch: # Permite rodar o teste manualmente no painel do GitHub
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Executar Testes do Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          # Executa no navegador Chrome em modo headless (sem interface)
+          browser: chrome
+          # Se o seu package.json tiver script de build/start, configure aqui.
+          # Para o Sauce Demo (site externo), não precisa iniciar servidor local.
+
+      - name: Salvar Mídia dos Testes (Screenshots em caso de erro)
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Salvar Vídeos da Execução
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
