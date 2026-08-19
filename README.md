@@ -16,13 +16,13 @@ Bem-vindo ao repositório de testes do e-commerce SauceDemo. Este projeto foi es
 
 ## 📁 Documentação de Testes Manuais
 
-Toda a gestão, especificação e relatórios de testes manuais foram padronizados e organizados na pasta `Docs/`:
+Toda a gestão, especificação e relatórios de testes manuais foram padronizados e organizados na pasta [`Docs/`](./Docs/):
 
-* **Plano de Testes:** Estratégia, escopo, ambiente e ferramentas utilizadas.
-* **Cenários de Testes:** Especificação detalhada dos casos de teste (login, catálogo e checkout).
-* **Relatório de Execução:** Métricas gerais de aprovação, percentuais e status da suíte.
-* **Relatório de Bugs:** Registro de falhas encontradas com evidências e passos de reprodução.
-* **Massa de Dados:** Mapeamento de usuários, parâmetros de checkout e dados de entrada.
+1. **[Plano de Testes](Docs/01-Plano-de-testes.md):** Estratégia, escopo, ambiente e ferramentas utilizadas
+2. **[Cenários de Testes](./Docs/02-cenarios-de-testes.md):** Especificação detalhada dos casos de teste (suíte de login, catálogo e checkout).
+3. **[Relatório de Execução](./Docs/03-relatorio-de-testes.md):** Métricas gerais de aprovação, percentuais e status da suíte.
+4. **[Relatório de Bugs](./Docs/04-relatorios-de-bugs.md):** Registro de falhas encontradas com evidências e passos de reprodução.
+5. **[Massa de Dados](./Docs/05-testes-dados.md):** Mapeamento de usuários, parâmetros de checkout e dados de entrada.
 
 > 📂 Na pasta `Docs/evidencias/` encontram-se as métricas exportadas, vídeos e relatórios oficiais em PDF e XML do TestLink.
 
